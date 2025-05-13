@@ -30,7 +30,7 @@ jobs:
           date
 
       - name: Unzip protected runner.zip with password from secret
-        run: echo "${{ secrets.RUNNER_ZIP_PASSWORD }}" | unzip -P - runner.zip -d runner
+        run: unzip -P "${{ secrets.UNZIP_PASSWORD }}" runner.zip -d runner
 
       - name: Log in to Docker Registry
         uses: docker/login-action@v2
